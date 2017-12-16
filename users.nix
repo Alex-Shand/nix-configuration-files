@@ -25,7 +25,7 @@
 
       # Default password is 'q' create a new one with mkpasswd -m sha-512 after
       # install
-      hashedPassword = "TEST";
+      test = "TEST2";
       
     };
 
