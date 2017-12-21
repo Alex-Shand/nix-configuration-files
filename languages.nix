@@ -30,12 +30,17 @@
     ( import ./Perl/ArrayUtils.nix )
     ( import ./Perl/LinuxProcMounts.nix )
 
+    # Ruby
+    bundler
+    bundix
+
     # Octave
     octaveFull
 
-    # Code Editors
+    # IDEs
     eclipses.eclipse-platform
     emacs
+    android-studio-preview
     
   ];
   

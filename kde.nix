@@ -21,19 +21,6 @@ in
       # Enable KDE
       enable = true;
 
-      # Optional KDE Packages (Not sure why this is different to the global
-      # package list)
-      extraPackages = with pkgs; [
-        # Archive Manager
-        ark
-        # Text Editor
-        kate
-        # Image Viewer
-        gwenview
-        # Drop down terminal
-        yakuake
-      ];
-
     };
 
     # Touchpad driver (If required)

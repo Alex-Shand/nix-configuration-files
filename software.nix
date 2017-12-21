@@ -34,8 +34,9 @@
     dropbox
     keepass
 
-    # Image Viewer (Should be changed to Gwenview)
+    # Image Viewer
     gnome3.eog
+    gwenview
 
     # Office
     libreoffice
@@ -48,6 +49,18 @@
 
     # Rss Reader
     quiterss
+
+    # Drop down terminal
+    yakuake
+
+    # Dotfiles
+    homesick
+
+    # Archive Manager
+    ark
+
+    # Text Editor
+    kate
     
   ];
 
