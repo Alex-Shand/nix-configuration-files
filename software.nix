@@ -24,7 +24,7 @@
     taskwarrior
 
     # Web Browsers
-    firefoxWrapper
+    firefox
     chromium
 
     # Video Codecs + Player
