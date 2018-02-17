@@ -2,9 +2,14 @@
 
 {
 
-  # Libvirt for general virtual machines
-  virtualisation.libvirtd.enable = true;
-  virtualisation.virtualbox.host.enable = true;
+  virtualisation = {
+    # Libvirt for general virtual machines
+    libvirtd.enable = true;
+    # For Vagrant
+    virtualbox.host.enable = true;
+    # Docker
+    docker.enable = true;
+  };
   
   environment.systemPackages = with pkgs; [
     
@@ -13,6 +18,9 @@
     
     # Something to do with networking I think
     bridge-utils
+
+    # VM Provisioner
+    vagrant
     
   ];
 

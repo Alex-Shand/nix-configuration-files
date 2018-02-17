@@ -33,7 +33,7 @@
   ];
 
   # Installation Mode (1=laptop, 2=desktop)
-  var.mode = 2;
+  var.mode = 1;
 
   # Hardlink identical files if possible
   nix.autoOptimiseStore = true;

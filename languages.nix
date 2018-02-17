@@ -1,4 +1,3 @@
-
 # Programming languages that are globally available (Mostly they should be setup
 # by nix-shell)
 { config, pkgs, ... }:
@@ -15,7 +14,13 @@
       beautifulsoup4
       tkinter
       virtualenv
+      lxml
+      pylint
+      numpy
+      opencv3
     ]))
+
+    opencv3
 
     # Perl
     # Tool to generate nix expressions for cpan modules
@@ -26,7 +31,7 @@
     XMLSimple
     LWP
     HTMLTokeParserSimple
-    IPCRun3
+    IPCSystemSimple
     ( import ./Perl/ArrayUtils.nix )
     ( import ./Perl/LinuxProcMounts.nix )
 

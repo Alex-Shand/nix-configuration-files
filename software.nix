@@ -6,16 +6,18 @@
   environment.systemPackages = with pkgs; [
 
     # Some CLI programs
-    wget
-    encfs
-    dos2unix
-    lsof
-    git
-    imagemagick
-    file
-    psmisc
-    libnotify
-    unzip
+    #wget
+    #dos2unix
+    #lsof
+    #imagemagick
+    #file
+    #psmisc
+    #libnotify
+    #unzip
+    #xorg.xhost
+    #zip
+    #sshfs
+    #ffmpeg
 
     # Can be used to hash a password (See users.nix)
     mkpasswd
@@ -26,6 +28,7 @@
     # Web Browsers
     firefox
     chromium
+    #tor-browser-bundle-bin
 
     # Video Codecs + Player
     vlc
@@ -35,7 +38,7 @@
     keepass
 
     # Image Viewer
-    gnome3.eog
+    #gnome3.eog
     gwenview
 
     # Office
@@ -46,7 +49,8 @@
 
     # Nix language interpreter
     nix-repl
-
+    #indent
+    
     # Rss Reader
     quiterss
 
@@ -61,6 +65,13 @@
 
     # Text Editor
     kate
+
+    # Git
+    git
+    meld
+
+    # Ecrypted file system
+    encfs
     
   ];
 
