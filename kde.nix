@@ -22,6 +22,7 @@ in
       enable = true;
 
     };
+    #desktopManager.enlightenment.enable = true;
 
     # Touchpad driver (If required)
     synaptics.enable = touchpad;
