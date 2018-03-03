@@ -32,6 +32,7 @@
     LWP
     HTMLTokeParserSimple
     IPCSystemSimple
+    ListAllUtils
     ( import ./Perl/ArrayUtils.nix )
     ( import ./Perl/LinuxProcMounts.nix )
 

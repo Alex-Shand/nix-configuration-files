@@ -17,6 +17,7 @@
     # Web Browsers
     firefox
     chromium
+    tor-browser-bundle-bin
 
     # Video Codecs + Player
     vlc
