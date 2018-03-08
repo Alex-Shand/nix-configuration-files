@@ -17,10 +17,7 @@
       lxml
       pylint
       numpy
-      opencv3
     ]))
-
-    opencv3
 
     # Perl
     # Tool to generate nix expressions for cpan modules
@@ -33,6 +30,7 @@
     HTMLTokeParserSimple
     IPCSystemSimple
     ListAllUtils
+    Autobox
     ( import ./Perl/ArrayUtils.nix )
     ( import ./Perl/LinuxProcMounts.nix )
 
