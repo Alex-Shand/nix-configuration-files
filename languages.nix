@@ -17,6 +17,7 @@
       lxml
       pylint
       numpy
+      cytoolz
     ]))
 
     # Perl
