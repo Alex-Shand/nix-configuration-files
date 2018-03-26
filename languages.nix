@@ -18,6 +18,8 @@
       pylint
       numpy
       cytoolz
+      pypeg2
+      graphviz
     ]))
 
     # Perl

@@ -59,6 +59,9 @@
 
     # Ecrypted file system
     encfs
+
+    # Read zip files
+    unzip
     
   ];
 
