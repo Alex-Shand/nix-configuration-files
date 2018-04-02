@@ -3,7 +3,8 @@
 { config, pkgs, ... }:
 
 {
-  environment.systemPackages = with pkgs; with perlPackages; [
+  environment.systemPackages = with pkgs; with perlPackages;
+  with ocamlPackages; [
     
     # Python3 (Installs as python)
     ( python3.withPackages( ps: with ps; [
@@ -22,6 +23,11 @@
       graphviz
     ]))
 
+    # Ocaml
+    ocaml
+    utop
+    findlib
+    
     # Perl
     # Tool to generate nix expressions for cpan modules
     nix-generate-from-cpan
