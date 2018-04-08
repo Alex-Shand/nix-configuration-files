@@ -24,9 +24,7 @@
     ]))
 
     # Ocaml
-    ocaml
     utop
-    findlib
     
     # Perl
     # Tool to generate nix expressions for cpan modules
