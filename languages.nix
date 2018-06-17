@@ -52,6 +52,12 @@
     eclipses.eclipse-platform
     emacs
     android-studio-preview
+
+    # Spell checking for emacs
+    aspell
+    aspellDicts.en
+    aspellDicts.en-computers
+    aspellDicts.en-science
     
   ];
   

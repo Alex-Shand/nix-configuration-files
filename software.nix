@@ -1,9 +1,16 @@
 # Software not automatically installed by other files and package configuration
 { config, pkgs, ... }:
 
+let
+  unstable = import (
+    fetchTarball https://github.com/NixOS/nixpkgs-channels/archive/nixos-unstable.tar.gz
+  );
+in
 {
   
   environment.systemPackages = with pkgs; [
+
+    #unstable.weechat
 
     # For notify function in bashrc
     libnotify
@@ -17,6 +24,7 @@
     # Web Browsers
     firefox
     chromium
+    tor-browser-bundle
 
     # Video Codecs + Player
     vlc
@@ -61,6 +69,9 @@
 
     # Read zip files
     unzip
+
+    # Math stuff
+    sage
     
   ];
 
