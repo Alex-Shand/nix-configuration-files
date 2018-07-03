@@ -21,6 +21,7 @@
       cytoolz
       pypeg2
       graphviz
+      (import ./Python/dominate.nix)
     ]))
 
     # Ocaml
