@@ -3,29 +3,22 @@
 { config, pkgs, ... }:
 
 {
-  environment.systemPackages = with pkgs; with perlPackages;
-  with ocamlPackages; [
+  environment.systemPackages = with pkgs; with perlPackages; [
     
     # Python3 (Installs as python)
     ( python3.withPackages( ps: with ps; [
-      # Should install librarys here, pip is only for maintaining an up to date
-      # youtube-dl
-      pip
-      mutagen
+      #mutagen
       beautifulsoup4
-      tkinter
-      virtualenv
+      #tkinter
+      #virtualenv
       lxml
       pylint
-      numpy
+      #numpy
       cytoolz
-      pypeg2
-      graphviz
+      #pypeg2
+      #graphviz
       (import ./Python/dominate.nix)
     ]))
-
-    # Ocaml
-    utop
     
     # Perl
     # Tool to generate nix expressions for cpan modules
@@ -43,22 +36,8 @@
     ( import ./Perl/LinuxProcMounts.nix )
 
     # Ruby
-    bundler
-    bundix
-
-    # Octave
-    octaveFull
-
-    # IDEs
-    eclipses.eclipse-platform
-    emacs
-    android-studio-preview
-
-    # Spell checking for emacs
-    aspell
-    aspellDicts.en
-    aspellDicts.en-computers
-    aspellDicts.en-science
+    #bundler
+    #bundix
     
   ];
   

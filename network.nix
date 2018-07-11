@@ -13,14 +13,12 @@ in
     # Set Hostname
     hostName = host;
 
-    # Control the network from the Desktop Manager
     networkmanager = {
+      # Control the network from the Desktop Manager
       enable = true;
+      # DNS servers
       insertNameservers = [ "1.1.1.1" "1.0.0.1" ];
     };
-
-    # DNS
-    #nameservers = [ "1.1.1.1" "1.0.0.1" ];
 
   };
   

@@ -16,13 +16,8 @@ in
     # Keyboard layout
     layout = "gb";
 
-    desktopManager.plasma5 = {
-
-      # Enable KDE
-      enable = true;
-
-    };
-    #desktopManager.enlightenment.enable = true;
+    # Enable KDE 
+    desktopManager.plasma5.enable = true;
 
     # Touchpad driver (If required)
     synaptics.enable = touchpad;

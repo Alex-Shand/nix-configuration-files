@@ -10,8 +10,6 @@ in
   
   environment.systemPackages = with pkgs; [
 
-    #unstable.weechat
-
     # For notify function in bashrc
     libnotify
 
@@ -38,11 +36,11 @@ in
     # Office
     libreoffice
 
-    # pdf Viewer
+    # PDF Viewer
     evince
 
     # Nix language interpreter
-    nix-repl
+    #nix-repl
     #indent
     
     # Rss Reader
@@ -57,12 +55,21 @@ in
     # Archive Manager
     ark
 
-    # Text Editor
+    # Editors
     kate
+    eclipses.eclipse-platform
+    emacs
+    android-studio-preview
 
     # Git
     git
     meld
+
+    # Spell checking for emacs
+    aspell
+    aspellDicts.en
+    aspellDicts.en-computers
+    aspellDicts.en-science
 
     # Ecrypted file system
     encfs
@@ -72,6 +79,7 @@ in
 
     # Math stuff
     sage
+    octaveFull
     
   ];
 

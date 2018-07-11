@@ -3,12 +3,16 @@
 {
 
   virtualisation = {
+
     # Libvirt for general virtual machines
     libvirtd.enable = true;
+
     # For Vagrant
     virtualbox.host.enable = true;
+
     # Docker
     docker.enable = true;
+
   };
   
   environment.systemPackages = with pkgs; [
