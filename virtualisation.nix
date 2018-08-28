@@ -14,18 +14,18 @@
     docker.enable = true;
 
   };
-  
+
   environment.systemPackages = with pkgs; [
-    
+
     # GUI for managing machines
     virtmanager
-    
+
     # Something to do with networking I think
     bridge-utils
 
     # VM Provisioner
     vagrant
-    
+
   ];
 
 }

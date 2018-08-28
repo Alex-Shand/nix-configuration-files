@@ -13,6 +13,7 @@ in
 
     # Enable the X11 windowing system
     enable = true;
+
     # Keyboard layout
     layout = "gb";
 
@@ -23,5 +24,5 @@ in
     synaptics.enable = touchpad;
 
   };
-  
+
 }

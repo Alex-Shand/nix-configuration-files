@@ -1,6 +1,14 @@
-# Collects configuration from other files and holds options not worth a seperate
+# Collects configuration from other files and holds options not worth a separate
 # file by themselves
 { config, pkgs, ... }:
+
+let
+
+# If true don't install non-essential stuff (Stops the live OS from running out
+# of space in /nix/store)
+first_install = false;
+
+in
 
 {
 
@@ -18,19 +26,20 @@
     ./invariant.nix
     # Localisation + Timezone
     ./locale.nix
+    # User accounts
+    ./users.nix
+    ] ++ (if first_install then [] else [
     # Networking
     ./network.nix
     # General Software
     ./software.nix
     # Programming Languages
     ./languages.nix
-    # User accounts
-    ./users.nix
     # GUI
     ./kde.nix
     # Virtualisation
     ./virtualisation.nix
-  ];
+    ]);
 
   # Installation Mode (1=laptop, 2=desktop)
   var.mode = 1;

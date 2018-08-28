@@ -2,12 +2,14 @@
 { config, pkgs, ... }:
 
 let
-  unstable = import (
-    fetchTarball https://github.com/NixOS/nixpkgs-channels/archive/nixos-unstable.tar.gz
-  );
-in
+
+unstable = import (
+  fetchTarball https://github.com/NixOS/nixpkgs-channels/archive/nixos-unstable.tar.gz
+);       
+
+in  
 {
-  
+
   environment.systemPackages = with pkgs; [
 
     # For notify function in bashrc
@@ -42,7 +44,7 @@ in
     # Nix language interpreter
     #nix-repl
     #indent
-    
+
     # Rss Reader
     quiterss
 
@@ -80,7 +82,7 @@ in
     # Math stuff
     sage
     octaveFull
-    
+
   ];
 
   # Permits installation of non-free and non-open-source components

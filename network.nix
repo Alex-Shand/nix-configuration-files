@@ -7,7 +7,7 @@ host = if config.var.mode == 1 then "laptop" else "desktop";
 in
 
 {
-  
+
   networking = {
 
     # Set Hostname
@@ -21,5 +21,5 @@ in
     };
 
   };
-  
+
 }

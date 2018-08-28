@@ -3,6 +3,7 @@
 { config, pkgs, ... }:
 
 let
+
 # Overide the device assignments of the subvolumes in the cryptsystem
 # partition (The installer doesn't detect it properly)
 mapper = pkgs.lib.mkForce "/dev/mapper/sysvg-system";
@@ -40,52 +41,52 @@ desktop = (config.var.mode == 2);
 in
 
 {
-  
+
   boot = {
-    
+
     # Map the cryptsystem partition to /dev/mapper/lvm on boot
     initrd.luks.devices.lvm.device = "/dev/disk/by-partlabel/cryptsystem";
-    
+
     loader = {
-      
+
       grub = {
-        
+
         # Use Grub2
         enable = true;
         version = 2;
-        
+
         # Install to efi
         efiSupport = true;
         device = "nodev";
-        
+
         # Causes grub to install itself to $EFI_Partition/EFI/boot/boot$arch.efi
         efiInstallAsRemovable = true;
 
         # Add the Windows menu entry if requried
         extraEntries = if desktop then win_menu_entry else "";
-        
+
       };
-      
+
       # Disable Timeout
       timeout = -1;
-      
+
     };
-    
+
   };
-  
+
   # Set the options defined above for each btrfs subvolume
   fileSystems = {
-    
+
     "/" = overrideOptions;
-    
+
     "/home" = overrideOptions;
-    
+
     "/home/.snapshots" = overrideOptions;
-    
+
     "/home/alex/outside" = overrideOptions;
-    
+
     "/.btrfs-root" = overrideOptions;
-    
+
   };
 
   # This seems to be required to reliably get sound
