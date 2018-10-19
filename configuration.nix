@@ -58,5 +58,4 @@ in
 
   # Show password stars for sudo
   security.sudo.extraConfig = "Defaults env_reset, pwfeedback";
-
 }
