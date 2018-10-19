@@ -13,6 +13,7 @@
       pylint
       cytoolz
       (import ./Python/dominate.nix)
+      numpy
     ]))
 
     # Perl
