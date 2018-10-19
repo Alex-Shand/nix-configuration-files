@@ -80,8 +80,11 @@ in
     unzip
 
     # Math stuff
-    sage
+    #sage
     octaveFull
+
+    texlive.combined.scheme-full
+    texmaker
 
   ];
 
