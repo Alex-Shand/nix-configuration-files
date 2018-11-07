@@ -3,7 +3,8 @@
 { config, pkgs, ... }:
 
 {
-  environment.systemPackages = with pkgs; with perlPackages; [
+  environment.systemPackages =
+  with pkgs; with perlPackages; with ocamlPackages; [
 
     # Python3 (Installs as python)
     ( python3.withPackages( ps: with ps; [
@@ -14,6 +15,9 @@
       cytoolz
       (import ./Python/dominate.nix)
       numpy
+      matplotlib
+      tkinter
+      mypy
     ]))
 
     # Perl
@@ -30,6 +34,10 @@
     Autobox
     ( import ./Perl/ArrayUtils.nix )
     ( import ./Perl/LinuxProcMounts.nix )
+
+    # OCaml
+    ocaml
+    utop
 
   ];
 

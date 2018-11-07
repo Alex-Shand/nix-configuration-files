@@ -85,6 +85,8 @@ in
 
     texlive.combined.scheme-full
     texmaker
+    filezilla
+    android-studio-preview
 
   ];
 
