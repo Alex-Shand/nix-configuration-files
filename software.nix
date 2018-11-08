@@ -3,6 +3,7 @@
 
 let
 
+# Access the unstable channel (Using it kills rebuild times)
 unstable = import (
   fetchTarball https://github.com/NixOS/nixpkgs-channels/archive/nixos-unstable.tar.gz
 );       
@@ -41,10 +42,6 @@ in
     # PDF Viewer
     evince
 
-    # Nix language interpreter
-    #nix-repl
-    #indent
-
     # Rss Reader
     quiterss
 
@@ -62,6 +59,7 @@ in
     eclipses.eclipse-platform
     emacs
     android-studio-preview
+    texmaker
 
     # Git
     git
@@ -73,20 +71,12 @@ in
     aspellDicts.en-computers
     aspellDicts.en-science
 
-    # Ecrypted file system
-    encfs
-
     # Read zip files
     unzip
 
     # Math stuff
-    #sage
+    sage
     octaveFull
-
-    texlive.combined.scheme-full
-    texmaker
-    filezilla
-    android-studio-preview
 
   ];
 

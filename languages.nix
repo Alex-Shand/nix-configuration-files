@@ -21,23 +21,14 @@
     ]))
 
     # Perl
-    # Tool to generate nix expressions for cpan modules
-    nix-generate-from-cpan
-    # Perl Modules from Nix or generated from the above
-    FileHomeDir
-    FileFindRulePerl
-    XMLSimple
-    LWP
-    HTMLTokeParserSimple
-    IPCSystemSimple
-    ListAllUtils
-    Autobox
-    ( import ./Perl/ArrayUtils.nix )
-    ( import ./Perl/LinuxProcMounts.nix )
+    perl
 
     # OCaml
     ocaml
     utop
+
+    # Latex
+    texlive.combined.scheme-full
 
   ];
 
