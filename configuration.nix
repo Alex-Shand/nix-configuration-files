@@ -13,10 +13,6 @@ in
 {
 
   imports =  [
-    # The NixOS release to be compatible with for stateful data such as
-    # databases (Seperated to allow for the possibility of laptop and desktop
-    # having different NixOS versions)
-    ./version.nix
     # Hardware configuration created by installer
     ./hardware-configuration.nix
     # It seems options can't be defined in configuration.nix so this defines
@@ -28,15 +24,15 @@ in
     ./locale.nix
     # User accounts
     ./users.nix
-    ] ++ (if first_install then [] else [
+    # GUI
+    ./kde.nix
     # Networking
     ./network.nix
+    ] ++ (if first_install then [] else [
     # General Software
     ./software.nix
     # Programming Languages
     ./languages.nix
-    # GUI
-    ./kde.nix
     # Virtualisation
     ./virtualisation.nix
     ]);
@@ -58,4 +54,8 @@ in
 
   # Show password stars for sudo
   security.sudo.extraConfig = "Defaults env_reset, pwfeedback";
+
+  # The NixOS release to be compatible with for stateful data such as databases
+  system.stateVersion = "17.09";
+
 }

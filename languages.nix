@@ -3,7 +3,7 @@
 { config, pkgs, ... }:
 
 {
-  environment.systemPackages = with pkgs; with perlPackages; [
+  environment.systemPackages = with pkgs; [
 
     # Python3 (Installs as python)
     ( python3.withPackages( ps: with ps; [
@@ -14,22 +14,16 @@
       cytoolz
       (import ./Python/dominate.nix)
       numpy
+      matplotlib
+      tkinter
+      mypy
     ]))
 
     # Perl
-    # Tool to generate nix expressions for cpan modules
-    nix-generate-from-cpan
-    # Perl Modules from Nix or generated from the above
-    FileHomeDir
-    FileFindRulePerl
-    XMLSimple
-    LWP
-    HTMLTokeParserSimple
-    IPCSystemSimple
-    ListAllUtils
-    Autobox
-    ( import ./Perl/ArrayUtils.nix )
-    ( import ./Perl/LinuxProcMounts.nix )
+    perl
+
+    # Latex
+    texlive.combined.scheme-full
 
   ];
 
