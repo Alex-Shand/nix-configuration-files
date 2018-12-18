@@ -3,8 +3,7 @@
 { config, pkgs, ... }:
 
 {
-  environment.systemPackages =
-  with pkgs; with perlPackages; with ocamlPackages; [
+  environment.systemPackages = with pkgs; [
 
     # Python3 (Installs as python)
     ( python3.withPackages( ps: with ps; [
@@ -22,10 +21,6 @@
 
     # Perl
     perl
-
-    # OCaml
-    ocaml
-    utop
 
     # Latex
     texlive.combined.scheme-full

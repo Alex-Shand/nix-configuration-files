@@ -14,10 +14,13 @@ in
     hostName = host;
 
     networkmanager = {
+
       # Control the network from the Desktop Manager
       enable = true;
+
       # DNS servers
       insertNameservers = [ "1.1.1.1" "1.0.0.1" ];
+
     };
 
   };

@@ -42,7 +42,7 @@ in
     # PDF Viewer
     evince
 
-    # Rss Reader
+    # RSS Reader
     quiterss
 
     # Drop down terminal
@@ -60,6 +60,7 @@ in
     emacs
     android-studio-preview
     texmaker
+    coq
 
     # Git
     git
