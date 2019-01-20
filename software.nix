@@ -12,6 +12,7 @@ in
 {
 
   environment.systemPackages = with pkgs; [
+    networkmanager-openvpn
 
     # For notify function in bashrc
     libnotify
