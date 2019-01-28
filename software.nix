@@ -77,7 +77,6 @@ in
     unzip
 
     # Math stuff
-    sage
     octaveFull
 
   ];
