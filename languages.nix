@@ -31,6 +31,9 @@
     # Latex
     texlive.combined.scheme-full
 
+    # Make
+    gnumake
+
   ];
 
 }
