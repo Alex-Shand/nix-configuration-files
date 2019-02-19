@@ -79,6 +79,8 @@ in
     # Math stuff
     octaveFull
 
+    inkscape
+
   ];
 
   # Permits installation of non-free and non-open-source components
