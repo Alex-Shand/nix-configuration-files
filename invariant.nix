@@ -44,6 +44,9 @@ in
 
   boot = {
 
+    # Mount a tmpfs on /tmp
+    tmpOnTmpfs = true;
+
     # Map the cryptsystem partition to /dev/mapper/lvm on boot
     initrd.luks.devices.lvm.device = "/dev/disk/by-partlabel/cryptsystem";
 
