@@ -12,7 +12,6 @@ in
 {
 
   environment.systemPackages = with pkgs; [
-    networkmanager-openvpn
 
     # For notify function in bashrc
     libnotify
@@ -59,7 +58,7 @@ in
     kate
     eclipses.eclipse-platform
     emacs
-    android-studio-preview
+    #android-studio-preview
     texmaker
     coq
 
@@ -78,8 +77,6 @@ in
 
     # Math stuff
     octaveFull
-
-    inkscape
 
   ];
 

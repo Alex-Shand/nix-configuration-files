@@ -17,11 +17,12 @@ in
     # Keyboard layout
     layout = "gb";
 
-    # Enable KDE 
+    # Enable KDE
+    displayManager.sddm.enable = true;
     desktopManager.plasma5.enable = true;
 
     # Touchpad driver (If required)
-    synaptics.enable = touchpad;
+    libinput.enable = touchpad;
 
   };
 
