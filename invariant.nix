@@ -35,7 +35,7 @@ win_menu_entry = ''
     }
     '';
 
-# Desktop needs a Windows menu entry
+laptop = (config.var.mode == 1);
 desktop = (config.var.mode == 2);
 
 in
@@ -52,10 +52,16 @@ in
 
     loader = {
 
+      # Laptop bootloader
+      systemd-boot.enable = laptop;
+      efi.canTouchEfiVariables = laptop;
+
+      # Desktop bootloader
       grub = {
 
+        enable = desktop;
+
         # Use Grub2
-        enable = true;
         version = 2;
 
         # Install to efi
@@ -65,8 +71,8 @@ in
         # Causes grub to install itself to $EFI_Partition/EFI/boot/boot$arch.efi
         efiInstallAsRemovable = true;
 
-        # Add the Windows menu entry if requried
-        extraEntries = if desktop then win_menu_entry else "";
+        # Add the Windows menu entry
+        extraEntries =  win_menu_entry;
 
       };
 
@@ -92,7 +98,8 @@ in
 
   };
 
-  # This seems to be required to reliably get sound
+  # Enable sound
+  sound.enable = true;
   hardware.pulseaudio.enable = true;
 
 }
