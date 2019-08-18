@@ -38,7 +38,7 @@ in
     ]);
 
   # Installation Mode (1=laptop, 2=desktop)
-  var.mode = 1;
+  var.mode = 2;
 
   # Hardlink identical files if possible
   nix.autoOptimiseStore = true;
@@ -56,6 +56,6 @@ in
   security.sudo.extraConfig = "Defaults env_reset, pwfeedback";
 
   # The NixOS release to be compatible with for stateful data such as databases
-  system.stateVersion = "17.09";
+  system.stateVersion = "19.03";
 
 }

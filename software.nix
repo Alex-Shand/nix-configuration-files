@@ -59,7 +59,6 @@ in
     kate
     eclipses.eclipse-platform
     emacs
-    android-studio-preview
     texmaker
     coq
 
