@@ -72,7 +72,7 @@ in
         efiInstallAsRemovable = true;
 
         # Add the Windows menu entry
-        extraEntries =  win_menu_entry;
+        extraEntries = win_menu_entry;
 
       };
 

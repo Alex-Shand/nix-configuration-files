@@ -4,9 +4,6 @@
 
 {
   environment.systemPackages = with pkgs; [
-
-    # Generate a nix expression for a pypi module
-    pypi2nix
     
     # Python3 (Installs as python)
     ( python3.withPackages( ps: with ps; [
@@ -20,9 +17,8 @@
       tkinter
       mypy
       requests
-
-      (import ./Python/dominate.nix { inherit pkgs; }).packages.dominate
-      (import ./Python/progress.nix { inherit pkgs; }).packages.progress
+      dominate
+      progress
     ]))
 
     # Perl

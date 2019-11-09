@@ -1,18 +1,9 @@
 # Software not automatically installed by other files and package configuration
 { config, pkgs, ... }:
 
-let
-
-# Access the unstable channel (Using it kills rebuild times)
-unstable = import (
-  fetchTarball https://github.com/NixOS/nixpkgs-channels/archive/nixos-unstable.tar.gz
-);       
-
-in  
 {
 
   environment.systemPackages = with pkgs; [
-    networkmanager-openvpn
 
     # For notify function in bashrc
     libnotify
@@ -26,7 +17,6 @@ in
     # Web Browsers
     firefox
     chromium
-    tor-browser-bundle
 
     # Video Codecs + Player
     vlc
@@ -57,10 +47,8 @@ in
 
     # Editors
     kate
-    eclipses.eclipse-platform
     emacs
     texmaker
-    coq
 
     # Git
     git
@@ -74,11 +62,6 @@ in
 
     # Read zip files
     unzip
-
-    # Math stuff
-    octaveFull
-
-    inkscape
 
   ];
 
