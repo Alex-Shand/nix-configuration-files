@@ -63,6 +63,12 @@
     # Read zip files
     unzip
 
+    # Mount phone via adb
+    adbfs-rootless
+
+    # View STL files
+    fstl
+
   ];
 
   # Permits installation of non-free and non-open-source components

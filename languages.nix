@@ -12,16 +12,14 @@
       lxml
       pylint
       cytoolz
-      numpy
-      matplotlib
-      tkinter
       mypy
       requests
       dominate
       progress
+      pytest
     ]))
 
-    # Perl
+    # Perl (For password_remover)
     perl
 
     # Latex

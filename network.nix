@@ -25,4 +25,13 @@ in
 
   };
 
+  # For RaspberryPi
+  services.avahi = {
+
+      enable = true;
+
+      nssmdns = true;
+
+  };
+
 }
