@@ -25,5 +25,4 @@ in
     libinput.enable = touchpad;
 
   };
-
 }

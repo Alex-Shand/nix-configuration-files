@@ -49,6 +49,7 @@
     kate
     emacs
     texmaker
+    vscode
 
     # Git
     git
@@ -68,6 +69,8 @@
 
     # View STL files
     fstl
+
+    discord
 
   ];
 

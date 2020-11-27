@@ -43,8 +43,11 @@ in
   # Hardlink identical files if possible
   nix.autoOptimiseStore = true;
 
-  # Run fcron deamon
+  # Run fcron daemon
   services.fcron.enable = true;
+
+  # Run at daemon
+  services.atd.enable = true;
 
   # Setup adb and fastboot
   programs.adb.enable = true;
