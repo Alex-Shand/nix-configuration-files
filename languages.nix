@@ -4,9 +4,9 @@
 
 {
   environment.systemPackages = with pkgs; [
-    
+
     # Python3 (Installs as python)
-    ( python3.withPackages( ps: with ps; [
+    ( python39.withPackages( ps: with ps; [
       beautifulsoup4
       virtualenv
       lxml
@@ -14,7 +14,6 @@
       cytoolz
       mypy
       requests
-      dominate
       progress
       pytest
     ]))

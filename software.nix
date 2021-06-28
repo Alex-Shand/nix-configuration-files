@@ -67,11 +67,8 @@
     # Mount phone via adb
     adbfs-rootless
 
-    # View STL files
-    fstl
-
-    discord
-
+    # Mount NTFS drives
+    ntfs3g
   ];
 
   # Permits installation of non-free and non-open-source components
