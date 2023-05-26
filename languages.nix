@@ -6,7 +6,7 @@
   environment.systemPackages = with pkgs; [
 
     # Python3 (Installs as python)
-    ( python39.withPackages( ps: with ps; [
+    ( python38.withPackages( ps: with ps; [
       beautifulsoup4
       virtualenv
       lxml
@@ -16,10 +16,14 @@
       requests
       progress
       pytest
+      xmltodict
     ]))
 
-    # Perl (For password_remover)
-    perl
+    # Perl
+    (perl.withPackages( ps: with ps; [
+      IPCSystemSimple
+      IPCRun
+    ]))
 
     # Latex
     texlive.combined.scheme-full
@@ -28,5 +32,4 @@
     gnumake
 
   ];
-
 }

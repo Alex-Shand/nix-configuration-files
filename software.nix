@@ -69,6 +69,13 @@
 
     # Mount NTFS drives
     ntfs3g
+
+    discord
+    protonvpn-cli
+    dropbox
+    file
+    appimage-run
+    sshfs
   ];
 
   # Permits installation of non-free and non-open-source components

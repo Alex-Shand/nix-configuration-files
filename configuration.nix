@@ -49,6 +49,8 @@ in
   # Run at daemon
   services.atd.enable = true;
 
+  services.teamviewer.enable = true;
+
   # Setup adb and fastboot
   programs.adb.enable = true;
 
@@ -61,4 +63,7 @@ in
   # The NixOS release to be compatible with for stateful data such as databases
   system.stateVersion = "20.03";
 
+  services.blueman.enable = true;
+  hardware.bluetooth.enable = true;
+  hardware.pulseaudio.package = pkgs.pulseaudioFull;
 }
