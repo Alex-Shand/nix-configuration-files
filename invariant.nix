@@ -18,10 +18,10 @@ overrideOptions = { device = mapper; options = btrfs_opts; };
 # grub-probe --target=fs_uuid $WIN
 
 # First output goes here
-win_hints_string = "--hint-bios=hd0,gpt2 --hint-efi=hd0,gpt2 --hint-baremetal=ahci0,gpt2";
+win_hints_string = "--hint-bios=hd0,gpt1 --hint-efi=hd0,gpt1 --hint-baremetal=ahci0,gpt1";
 
 # Second output goes here
-win_fs_uuid = "488C-5E97";
+win_fs_uuid = "069A-66A3";
 
 # Windows Grub Menu entry from wiki.archlinux.org/index.php/GRUB
 win_menu_entry = ''
@@ -45,7 +45,7 @@ in
   boot = {
 
     # Mount a tmpfs on /tmp
-    tmpOnTmpfs = true;
+    tmp.useTmpfs = true;
 
     # Map the cryptsystem partition to /dev/mapper/lvm on boot
     initrd.luks.devices.lvm.device = "/dev/disk/by-partlabel/cryptsystem";
@@ -60,9 +60,6 @@ in
       grub = {
 
         enable = desktop;
-
-        # Use Grub2
-        version = 2;
 
         # Install to efi
         efiSupport = true;

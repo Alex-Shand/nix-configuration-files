@@ -38,18 +38,16 @@ in
     ]);
 
   # Installation Mode (1=laptop, 2=desktop)
-  var.mode = 1;
+  var.mode = 2;
 
   # Hardlink identical files if possible
-  nix.autoOptimiseStore = true;
+  nix.settings.auto-optimise-store = true;
 
   # Run fcron daemon
   services.fcron.enable = true;
 
   # Run at daemon
   services.atd.enable = true;
-
-  services.teamviewer.enable = true;
 
   # Setup adb and fastboot
   programs.adb.enable = true;

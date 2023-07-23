@@ -34,7 +34,7 @@
     evince
 
     # RSS Reader
-    quiterss
+    #quiterss #Relies on an insecure package, replace
 
     # Drop down terminal
     yakuake
