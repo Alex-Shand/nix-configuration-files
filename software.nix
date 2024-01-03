@@ -34,7 +34,7 @@
     evince
 
     # RSS Reader
-    #quiterss #Relies on an insecure package, replace
+    quiterss
 
     # Drop down terminal
     yakuake
@@ -49,7 +49,6 @@
     kate
     emacs
     texmaker
-    vscode
 
     # Git
     git
@@ -71,14 +70,19 @@
     ntfs3g
 
     discord
-    protonvpn-cli
     dropbox
     file
     appimage-run
     sshfs
+    alsa-utils
   ];
 
   # Permits installation of non-free and non-open-source components
   nixpkgs.config.allowUnfree = true;
+
+  nixpkgs.config.permittedInsecurePackages = [
+    # For quiterss
+    "qtwebkit-5.212.0-alpha4"
+  ];
 
 }

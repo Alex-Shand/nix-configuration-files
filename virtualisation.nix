@@ -18,7 +18,7 @@
   environment.systemPackages = with pkgs; [
 
     # GUI for managing machines
-    virtmanager
+    virt-manager
 
     # Something to do with networking I think
     bridge-utils

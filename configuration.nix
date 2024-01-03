@@ -24,6 +24,8 @@ in
     ./locale.nix
     # User accounts
     ./users.nix
+    # Sound
+    ./sound.nix
     # GUI
     ./kde.nix
     # Networking
@@ -33,12 +35,14 @@ in
     ./software.nix
     # Programming Languages
     ./languages.nix
+    # VSCode
+    ./vscode.nix
     # Virtualisation
     ./virtualisation.nix
     ]);
 
   # Installation Mode (1=laptop, 2=desktop)
-  var.mode = 2;
+  var.mode = 1;
 
   # Hardlink identical files if possible
   nix.settings.auto-optimise-store = true;
@@ -59,9 +63,5 @@ in
   security.sudo.extraConfig = "Defaults env_reset, pwfeedback";
 
   # The NixOS release to be compatible with for stateful data such as databases
-  system.stateVersion = "20.03";
-
-  services.blueman.enable = true;
-  hardware.bluetooth.enable = true;
-  hardware.pulseaudio.package = pkgs.pulseaudioFull;
+  system.stateVersion = "23.05";
 }

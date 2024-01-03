@@ -87,16 +87,8 @@ in
 
     "/home" = overrideOptions;
 
-    "/home/.snapshots" = overrideOptions;
-
-    "/home/alex/outside" = overrideOptions;
-
     "/.btrfs-root" = overrideOptions;
 
   };
-
-  # Enable sound
-  sound.enable = true;
-  hardware.pulseaudio.enable = true;
 
 }

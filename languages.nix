@@ -6,7 +6,7 @@
   environment.systemPackages = with pkgs; [
 
     # Python3 (Installs as python)
-    ( python38.withPackages( ps: with ps; [
+    ( python310.withPackages( ps: with ps; [
       beautifulsoup4
       virtualenv
       lxml
