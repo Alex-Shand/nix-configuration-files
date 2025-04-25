@@ -2,7 +2,6 @@
 { config, pkgs, ... }:
 
 {
-
   # Pipewire for sound
   security.rtkit.enable = true;
   services.pipewire = {
@@ -15,5 +14,4 @@
   # For Bluetooth Audio
   services.blueman.enable = true;
   hardware.bluetooth.enable = true;
-
 }

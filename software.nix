@@ -8,12 +8,6 @@
     # For notify function in bashrc
     libnotify
 
-    # Can be used to hash a password (See users.nix)
-    mkpasswd
-
-    # Task list
-    taskwarrior
-
     # Web Browsers
     firefox
     chromium
@@ -33,19 +27,17 @@
     # PDF Viewer
     evince
 
-    # RSS Reader
-    quiterss
-
     # Drop down terminal
     yakuake
 
     # Dotfiles
     homesick
 
-    # Archive Manager
+    # Archives
     ark
+    unzip
 
-    # Editors
+    # Editors (vscode has its own file)
     kate
     emacs
     texmaker
@@ -60,29 +52,24 @@
     aspellDicts.en-computers
     aspellDicts.en-science
 
-    # Read zip files
-    unzip
-
-    # Mount phone via adb
-    adbfs-rootless
-
     # Mount NTFS drives
     ntfs3g
 
+    # Dropbox
+    maestral
+
+    # RSS
+    liferea
+
+    # Misc
     discord
-    dropbox
     file
     appimage-run
     sshfs
-    alsa-utils
+    calibre
+    distrobox
   ];
 
   # Permits installation of non-free and non-open-source components
   nixpkgs.config.allowUnfree = true;
-
-  nixpkgs.config.permittedInsecurePackages = [
-    # For quiterss
-    "qtwebkit-5.212.0-alpha4"
-  ];
-
 }

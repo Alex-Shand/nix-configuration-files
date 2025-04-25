@@ -57,11 +57,14 @@ in
   programs.adb.enable = true;
 
   # Set vim as default editor for all users
-  programs.vim.defaultEditor = true;
+  programs.vim = {
+    enable = true;
+    defaultEditor = true;
+  };
 
   # Show password stars for sudo
   security.sudo.extraConfig = "Defaults env_reset, pwfeedback";
 
   # The NixOS release to be compatible with for stateful data such as databases
-  system.stateVersion = "23.05";
+  system.stateVersion = "23.11";
 }

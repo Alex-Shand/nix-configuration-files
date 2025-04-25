@@ -6,7 +6,7 @@
   environment.systemPackages = with pkgs; [
 
     # Python3 (Installs as python)
-    ( python310.withPackages( ps: with ps; [
+    (python314.withPackages( ps: with ps; [
       beautifulsoup4
       virtualenv
       lxml
@@ -19,11 +19,8 @@
       xmltodict
     ]))
 
-    # Perl
-    (perl.withPackages( ps: with ps; [
-      IPCSystemSimple
-      IPCRun
-    ]))
+    # Perl (I think this is just for the password remover script in this repo?)
+    perl
 
     # Latex
     texlive.combined.scheme-full

@@ -8,21 +8,20 @@ touchpad = (config.var.mode == 1);
 in
 
 {
+  services = {
+    xserver = {
+      # X11
+      enable = true;
+      # Keyboard layout
+      xkb.layout = "us";
+      # KDE
+      desktopManager.plasma5.enable = true;
+    };
 
-  services.xserver = {
-
-    # Enable the X11 windowing system
-    enable = true;
-
-    # Keyboard layout
-    layout = "gb";
-
-    # Enable KDE
+    # Display manager
     displayManager.sddm.enable = true;
-    desktopManager.plasma5.enable = true;
 
     # Touchpad driver (If required)
     libinput.enable = touchpad;
-
   };
 }
