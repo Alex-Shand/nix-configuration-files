@@ -56,6 +56,8 @@ in
   # Setup adb and fastboot
   programs.adb.enable = true;
 
+  services.teamviewer.enable = true;
+
   # Set vim as default editor for all users
   programs.vim = {
     enable = true;
