@@ -69,4 +69,9 @@ in
 
   # The NixOS release to be compatible with for stateful data such as databases
   system.stateVersion = "23.11";
+
+  boot.binfmt = {
+    emulatedSystems = [ "aarch64-linux" ];
+    preferStaticEmulators = true;
+  };
 }
