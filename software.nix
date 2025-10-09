@@ -19,7 +19,7 @@
     keepass
 
     # Image Viewer
-    gwenview
+    kdePackages.gwenview
 
     # Office
     libreoffice
@@ -28,17 +28,18 @@
     evince
 
     # Drop down terminal
-    yakuake
+    kdePackages.yakuake
+    kdePackages.konsole
 
     # Dotfiles
     homesick
 
     # Archives
-    ark
+    kdePackages.ark
     unzip
 
     # Editors (vscode has its own file)
-    kate
+    kdePackages.kate
     emacs
     texmaker
 
