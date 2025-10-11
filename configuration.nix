@@ -74,4 +74,6 @@ in
     emulatedSystems = [ "aarch64-linux" ];
     preferStaticEmulators = true;
   };
+
+  services.tailscale.enable = true;
 }
