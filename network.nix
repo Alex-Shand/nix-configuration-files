@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ config, pkgs, lib, ... }:
 
 let
 
@@ -13,9 +13,10 @@ in
     networkmanager = {
       # Control the network from the Desktop Manager
       enable = true;
-      # DNS servers
-      insertNameservers = [ "1.1.1.1" "1.0.0.1" ];
+      insertNameservers = ["1.1.1.1" "1.0.0.1"];
+      # insertNameservers = [ "100.64.0.1" "100.64.0.2" ];
     };
+    # nameservers = [ "100.64.0.1" "100.64.0.2" ];
   };
 
   # For RaspberryPi
