@@ -69,6 +69,7 @@
     sshfs
     calibre
     distrobox
+    mullvad
   ];
 
   # Permits installation of non-free and non-open-source components
