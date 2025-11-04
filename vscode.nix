@@ -8,7 +8,9 @@ let
     (import (builtins.fetchGit {
       url = "https://github.com/nix-community/nix-vscode-extensions";
       ref = "refs/heads/master";
-      rev = "baeaec5a10fb8626bea64ebabdfaecdf64832bf3";
+      ######
+      rev = "5d6525e4d5372973da1777b9ebdb01f033db1395";
+      ######
     })).extensions.${system};
 
   builder = import ./local_extension.nix { builder = utils.buildVscodeExtension; };
