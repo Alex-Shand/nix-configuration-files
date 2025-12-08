@@ -37,8 +37,6 @@ in
     ./languages.nix
     # VSCode
     ./vscode.nix
-    # Virtualisation
-    ./virtualisation.nix
     ]);
 
   # Installation Mode (1=laptop, 2=desktop)
@@ -77,4 +75,9 @@ in
 
   services.tailscale.enable = true;
   services.mullvad-vpn.enable = true;
+
+  virtualisation.docker.enable = true;
+  virtualisation.incus.enable = true;
+  # Required for incus
+  networking.nftables.enable = true;
 }

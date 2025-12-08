@@ -11,10 +11,10 @@
         "wheel"
         # Control the network with networkmanager
         "networkmanager"
-        # Enable interaction with libvirt
-        "libvirtd"
         # Use docker
         "docker"
+        # For Incus
+        "incus-admin"
       ];
       # Default password is 'q' create a new one with mkpasswd -m sha-512 after
       # install
