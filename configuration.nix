@@ -80,4 +80,8 @@ in
   virtualisation.incus.enable = true;
   # Required for incus
   networking.nftables.enable = true;
+  networking.firewall.trustedInterfaces = [ "incusbr0" ];
+  networking.firewall.interfaces.incusbr0.allowedTCPPortRanges = [{ from = 0; to = 65535; }];
+  networking.firewall.interfaces.incusbr0.allowedUDPPortRanges = [{ from = 0; to = 65535; }];
+
 }
