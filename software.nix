@@ -70,6 +70,8 @@
     calibre
     distrobox
     mullvad
+    wineWowPackages.stable
+    winetricks
   ];
 
   # Permits installation of non-free and non-open-source components
