@@ -17,6 +17,7 @@
       progress
       pytest
       xmltodict
+      playwright
     ]))
 
     # Perl (I think this is just for the password remover script in this repo?)
