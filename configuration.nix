@@ -66,11 +66,41 @@ in
 
   services.tailscale.enable = true;
   services.mullvad-vpn.enable = true;
+  services.mullvad-vpn.enableExcludeWrapper = true;
 
-  virtualisation.docker.enable = true;
+  virtualisation.docker = {
+    enable = true;
+    #rootless = {
+    #  enable = true;
+    #  setSocketVariable = true;
+    #  daemon.settings.dns = [
+    #    # For off VPN
+    #    "1.1.1.1"
+    #    "1.0.0.1"
+#
+#        # For on VPN
+#        "10.64.0.1"
+#      ];
+#    };
+  };
   virtualisation.incus.enable = true;
   # Required for incus
   networking.nftables.enable = true;
+  networking.nftables.ruleset =  ''
+      define EXCLUDED_SUBNET = { 10.10.5.0/24 }
+
+      table inet excludeTraffic {
+        chain excludeOutgoing {
+          type route hook output priority -150; policy accept;
+          ip daddr $EXCLUDED_SUBNET ct mark set 0x00000f41 meta mark set 0x6d6f6c65;
+        }
+
+        chain excludeForwarding {
+          type filter hook prerouting priority -150; policy accept;
+          ip saddr $EXCLUDED_SUBNET ct mark set 0x00000f41 meta mark set 0x6d6f6c65;
+        }
+      }
+    '';
   networking.firewall.trustedInterfaces = [ "incusbr0" ];
   networking.firewall.interfaces.incusbr0.allowedTCPPortRanges = [{ from = 0; to = 65535; }];
   networking.firewall.interfaces.incusbr0.allowedUDPPortRanges = [{ from = 0; to = 65535; }];

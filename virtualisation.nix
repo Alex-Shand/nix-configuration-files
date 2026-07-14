@@ -7,7 +7,14 @@
     # For Vagrant
     virtualbox.host.enable = true;
     # Docker
-    docker.enable = true;
+    docker = {
+      enable = false;
+      rootless = {
+        enable = true;
+        setSocketVariable = true;
+        daemon.settings.dns = [ "1.1.1.1", "1.0.0.1" ];
+      };
+    };
   };
 
   environment.systemPackages = with pkgs; [
