@@ -9,7 +9,7 @@ let
       url = "https://github.com/nix-community/nix-vscode-extensions";
       ref = "refs/heads/master";
       ######
-      rev = "5d6525e4d5372973da1777b9ebdb01f033db1395";
+      rev = "1ab4df863a22c3ba730eb49d8fdd80830e12d65c";
       ######
     })).extensions.${system};
 
