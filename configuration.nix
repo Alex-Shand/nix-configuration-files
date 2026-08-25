@@ -35,6 +35,8 @@ in
 
   # Hardlink identical files if possible
   nix.settings.auto-optimise-store = true;
+  nix.settings.experimental-features = [ "nix-command" "flakes" ];
+  nix.settings.trusted-users = [ "root" "alex" ];
 
   # Run fcron daemon
   services.fcron.enable = true;
