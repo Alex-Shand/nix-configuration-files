@@ -33,6 +33,8 @@ in
     ./vscode.nix
     ]);
 
+  security.sudo.wheelNeedsPassword = true;
+
   # Hardlink identical files if possible
   nix.settings.auto-optimise-store = true;
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
@@ -103,8 +105,10 @@ in
         }
       }
     '';
-  networking.firewall.trustedInterfaces = [ "incusbr0" ];
+  networking.firewall.trustedInterfaces = [ "incusbr0" "incusbr1" ];
   networking.firewall.interfaces.incusbr0.allowedTCPPortRanges = [{ from = 0; to = 65535; }];
   networking.firewall.interfaces.incusbr0.allowedUDPPortRanges = [{ from = 0; to = 65535; }];
+  networking.firewall.interfaces.incusbr1.allowedTCPPortRanges = [{ from = 0; to = 65535; }];
+  networking.firewall.interfaces.incusbr1.allowedUDPPortRanges = [{ from = 0; to = 65535; }];
 
 }
