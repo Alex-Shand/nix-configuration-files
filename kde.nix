@@ -1,12 +1,5 @@
 { config, pkgs, ... }:
 
-let
-
-# Laptop requires touchpad
-touchpad = (config.var.mode == 1);
-
-in
-
 {
   services = {
     xserver = {
@@ -21,7 +14,7 @@ in
     # Display manager
     displayManager.sddm.enable = true;
 
-    # Touchpad driver (If required)
-    libinput.enable = touchpad;
+    # Touchpad driver
+    libinput.enable = true;
   };
 }

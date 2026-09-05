@@ -1,8 +1,7 @@
-# Software not automatically installed by other files and package configuration
+# Misc software
 { config, pkgs, ... }:
 
 {
-
   environment.systemPackages = with pkgs; [
 
     # For notify function in bashrc

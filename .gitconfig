@@ -1,2 +1,3 @@
 [filter "set-default-password"]
-	clean = bash password_remover
+    required = true
+	clean = bash password_remover.sh

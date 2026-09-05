@@ -11,13 +11,9 @@ first_install = false;
 in
 
 {
-
   imports =  [
     # Hardware configuration created by installer
     ./hardware-configuration.nix
-    # It seems options can't be defined in configuration.nix so this defines
-    # var.mode used below
-    ./options.nix
     # Partitions, bootloader etc, probably shouldn't be changed post install
     ./invariant.nix
     # Localisation + Timezone
@@ -33,14 +29,9 @@ in
     ] ++ (if first_install then [] else [
     # General Software
     ./software.nix
-    # Programming Languages
-    ./languages.nix
     # VSCode
     ./vscode.nix
     ]);
-
-  # Installation Mode (1=laptop, 2=desktop)
-  var.mode = 1;
 
   # Hardlink identical files if possible
   nix.settings.auto-optimise-store = true;
