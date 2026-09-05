@@ -5,6 +5,7 @@
   environment.systemPackages = with pkgs; [
 
     nixfmt-classic
+    nfs-utils
 
     # For notify function in bashrc
     libnotify
