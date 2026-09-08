@@ -74,18 +74,6 @@ in
 
   virtualisation.docker = {
     enable = true;
-    #rootless = {
-    #  enable = true;
-    #  setSocketVariable = true;
-    #  daemon.settings.dns = [
-    #    # For off VPN
-    #    "1.1.1.1"
-    #    "1.0.0.1"
-#
-#        # For on VPN
-#        "10.64.0.1"
-#      ];
-#    };
   };
   virtualisation.incus.enable = true;
   # Required for incus
