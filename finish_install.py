@@ -9,6 +9,7 @@ import shutil
 SELF = Path(__file__).resolve()
 
 NIXOS_DIR = Path('/etc/nixos')
+HARDWARE_CONFIGURATION_SAFE = '/root/hardware-configuration.nix'
 
 USER = 'alex'
 HOME_DIR = Path(f'/home/{USER}')
@@ -60,8 +61,12 @@ def do_stage_1():
     run('chown', '-R', USER, CONFIG_DIR)
     run('sudo', '-u', USER, 'git', 'clone', REPO, CONFIG_DIR)
     os.chdir('/')
+    os.rename(NIXOS_DIR/'hardware-configuration.nix', HARDWARE_CONFIGURATION_SAFE)
     shutil.rmtree(NIXOS_DIR)
-    run('ln', '--symbolic', NIXOS_DIR, CONFIG_DIR)
+    run('ln', '--symbolic', CONFIG_DIR, NIXOS_DIR)
+    run('ln', '--symbolic', HARDWARE_CONFIGURATION_SAFE, CONFIG_DIR)
+    os.chdir(CONFIG_DIR)
+    run('sudo', '-u', USER, 'git', 'config', '--local', 'include.path', '../.gitconfig')
 
 def repo_status():
     result = subprocess.run(('git', 'config', '--get', 'remote.origin.url'), check=False, capture_output=True, text=True)
