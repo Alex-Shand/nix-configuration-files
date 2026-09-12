@@ -53,10 +53,7 @@ def do_stage_1():
             pass
         case _:
             raise Exception('Unexpected RepoStatus')
-    try:
-        shutil.rmtree(CONFIG_DIR)
-    except FileNotFoundError:
-        pass
+    safe_delete(CONFIG_DIR)
     CONFIG_DIR.mkdir(parents=True)
     run('chown', '-R', USER, CONFIG_DIR)
     run('sudo', '-u', USER, 'git', 'clone', REPO, CONFIG_DIR)
@@ -67,6 +64,7 @@ def do_stage_1():
     run('ln', '--symbolic', HARDWARE_CONFIGURATION_SAFE, CONFIG_DIR)
     os.chdir(CONFIG_DIR)
     run('sudo', '-u', USER, 'git', 'config', '--local', 'include.path', '../.gitconfig')
+    run(CONFIG_DIR/ME.name)
 
 def repo_status():
     result = subprocess.run(('git', 'config', '--get', 'remote.origin.url'), check=False, capture_output=True, text=True)
@@ -87,6 +85,24 @@ def repo_status():
     if ahead_count > 0:
         return 'Ahead'
     return 'Behind'
+
+def do_stage_2():
+    if os.geteuid() != 0:
+        run('sudo', SELF)
+        return
+    if NIXOS_DIR.resolve() != CONFIG_DIR:
+        print(f"Symlink from {NIXOS_DIR} to {CONFIG_DIR} isn't in place.")
+        print(f'Double check that hardware-configuration.nix is safely stored in {HARDWARE_CONFIGURATION_SAFE}')
+        print(f'Then delete {NIXOS_DIR} and run sudo ln -s {CONFIG_DIR} {NIXOS_DIR}')
+        print(f"Also run ln -s {HARDWARE_CONFIGURATION_SAFE} {CONFIG_DIR/'hardware-configuration.nix'} if it isn't present in {CONFIG_DIR}")
+    run('nixos-rebuild', 'boot')
+    run('reboot')
+
+def safe_delete(path):
+    try:
+        shutil.rmtree(CONFIG_DIR)
+    except FileNotFoundError:
+        pass
 
 def todo():
     raise Exception('todo')
